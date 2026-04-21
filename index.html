@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Transport System</title>
+    <title>Campus Electric Transport System</title>
 
     <style>
         body {
             font-family: Arial;
             text-align: center;
             margin: 0;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            background: linear-gradient(to right, #0f2027, #2c5364);
             color: white;
         }
 
@@ -19,7 +19,7 @@
         button {
             padding: 10px;
             margin: 8px;
-            background-color: #ff9800;
+            background-color: #00c853;
             color: white;
             border: none;
             cursor: pointer;
@@ -48,7 +48,7 @@
         }
 
         th {
-            background-color: #ff9800;
+            background-color: #00c853;
             color: white;
         }
     </style>
@@ -56,110 +56,74 @@
 
 <body>
 
-<h1>🚌 Smart University Transport System</h1>
+<h1>⚡ Campus Electric Transport System</h1>
 
 <button onclick="showSection('home')">Home</button>
 <button onclick="showSection('track')">Track Auto</button>
-<button onclick="showSection('routes')">Routes</button>
-<button onclick="showSection('timing')">Bus Timings</button>
-<button onclick="showSection('auto')">Electric Auto</button>
-<button onclick="showSection('guide')">Help Guide</button>
+<button onclick="showSection('autos')">Auto List</button>
+<button onclick="showSection('timing')">Timings</button>
+<button onclick="showSection('booking')">Booking</button>
+<button onclick="showSection('guide')">Help</button>
 
 <!-- HOME -->
 <div id="home" class="section" style="display:block;">
     <h2>Welcome</h2>
-    <p>This system helps students with transport inside and outside campus.</p>
+    <p>This system helps students travel inside campus using electric vehicles.</p>
 
-    <h3>🚍 Long Route Buses</h3>
-    <p>University → Ludhiana</p>
-    <p>University → Chandigarh</p>
-    <p>University → Amritsar</p>
-    <p>University → Himachal Pradesh</p>
-    <p>University → Haryana</p>
-
-    <h3>⚡ Campus Electric Autos</h3>
-    <p>Available between blocks for easy movement.</p>
+    <h3>📍 Available Blocks</h3>
+    <p>C1, C2, C3, A1, A2, A3, D1, D2, D3, D4, D5, D6, D7, D8</p>
 </div>
 
-<!-- TRACK (ELECTRIC AUTO) -->
+<!-- TRACK -->
 <div id="track" class="section">
-    <h2>⚡ Live Electric Auto Tracking</h2>
+    <h2>⚡ Live Auto Tracking</h2>
     <p id="location">Location: Block A1</p>
     <p id="time">Next Arrival: 2 mins</p>
 </div>
 
-<!-- ROUTES -->
-<div id="routes" class="section">
-    <h2>Bus Routes</h2>
-    <p>Route 1 → University to Ludhiana</p>
-    <p>Route 2 → University to Chandigarh</p>
-    <p>Route 3 → University to Amritsar</p>
-    <p>Route 4 → University to Himachal Pradesh</p>
-    <p>Route 5 → University to Haryana</p>
-</div>
-
-<!-- BUS TIMINGS -->
-<div id="timing" class="section">
-    <h2>Long Route Bus Timings</h2>
+<!-- AUTO LIST -->
+<div id="autos" class="section">
+    <h2>🚗 Available Electric Autos</h2>
 
     <table>
         <tr>
-            <th>Route</th>
-            <th>Morning</th>
-            <th>Evening</th>
+            <th>Auto Number</th>
+            <th>Status</th>
         </tr>
-        <tr>
-            <td>Ludhiana</td>
-            <td>7:30 AM</td>
-            <td>5:30 PM</td>
-        </tr>
-        <tr>
-            <td>Chandigarh</td>
-            <td>7:00 AM</td>
-            <td>6:00 PM</td>
-        </tr>
-        <tr>
-            <td>Amritsar</td>
-            <td>6:30 AM</td>
-            <td>6:30 PM</td>
-        </tr>
-        <tr>
-            <td>Himachal Pradesh</td>
-            <td>6:00 AM</td>
-            <td>7:00 PM</td>
-        </tr>
-        <tr>
-            <td>Haryana</td>
-            <td>7:45 AM</td>
-            <td>5:45 PM</td>
-        </tr>
+        <tr><td>AUTO-101</td><td id="s1">Available</td></tr>
+        <tr><td>AUTO-102</td><td id="s2">On Route</td></tr>
+        <tr><td>AUTO-103</td><td id="s3">Available</td></tr>
+        <tr><td>AUTO-104</td><td id="s4">On Route</td></tr>
+        <tr><td>AUTO-105</td><td id="s5">Available</td></tr>
+        <tr><td>AUTO-106</td><td id="s6">On Route</td></tr>
+        <tr><td>AUTO-107</td><td id="s7">Available</td></tr>
+        <tr><td>AUTO-108</td><td id="s8">On Route</td></tr>
+        <tr><td>AUTO-109</td><td id="s9">Available</td></tr>
+        <tr><td>AUTO-110</td><td id="s10">On Route</td></tr>
     </table>
 </div>
 
-<!-- ELECTRIC AUTO -->
-<div id="auto" class="section">
-    <h2>⚡ Campus Electric Auto</h2>
-
-    <p><b>Locations:</b> Block A1, A2, C1, C2, C3</p>
+<!-- TIMINGS -->
+<div id="timing" class="section">
+    <h2>Auto Service Timings</h2>
 
     <table>
         <tr>
             <th>Time Slot</th>
             <th>Service</th>
         </tr>
-        <tr>
-            <td>Morning</td>
-            <td>8:00 AM – 12:00 PM</td>
-        </tr>
-        <tr>
-            <td>Afternoon</td>
-            <td>12:00 PM – 4:00 PM</td>
-        </tr>
-        <tr>
-            <td>Evening</td>
-            <td>4:00 PM – 7:00 PM</td>
-        </tr>
+        <tr><td>Morning</td><td>8:00 AM – 12:00 PM</td></tr>
+        <tr><td>Afternoon</td><td>12:00 PM – 4:00 PM</td></tr>
+        <tr><td>Evening</td><td>4:00 PM – 7:00 PM</td></tr>
     </table>
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="section">
+    <h2>📞 Book an Auto</h2>
+
+    <p><b>Booking Number:</b> 98765-43210</p>
+    <p>Call this number to book an electric auto inside campus.</p>
 </div>
 
 <!-- GUIDE -->
@@ -171,10 +135,9 @@
     <p><b>Student Help:</b> Aman Sharma</p>
 
     <h3>Guidelines</h3>
-    <p>✔ Check timings before leaving</p>
-    <p>✔ Use tracking feature</p>
-    <p>✔ Carry ID card</p>
-    <p>✔ Follow routes properly</p>
+    <p>✔ Use autos responsibly</p>
+    <p>✔ Follow timings</p>
+    <p>✔ Give priority to emergency</p>
 </div>
 
 <script>
@@ -186,19 +149,27 @@ function showSection(id) {
     document.getElementById(id).style.display = "block";
 }
 
-// Electric auto tracking simulation
-var locations = ["Block A1", "Block A2", "Block C1", "Block C2", "Block C3"];
+// LIVE TRACKING
+var locations = ["C1","C2","C3","A1","A2","A3","D1","D2","D3","D4","D5","D6","D7","D8"];
 var i = 0;
 
 setInterval(function() {
     i = (i + 1) % locations.length;
-
-    document.getElementById("location").innerText = "Location: " + locations[i];
+    document.getElementById("location").innerText = "Location: Block " + locations[i];
 
     var time = Math.floor(Math.random() * 5) + 1;
     document.getElementById("time").innerText = "Next Arrival: " + time + " mins";
-
 }, 3000);
+
+// AUTO STATUS UPDATE (every 5 minutes)
+function updateStatus() {
+    for (let i = 1; i <= 10; i++) {
+        let status = Math.random() > 0.5 ? "Available" : "On Route";
+        document.getElementById("s" + i).innerText = status;
+    }
+}
+
+setInterval(updateStatus, 300000); // 5 minutes
 </script>
 
 </body>
