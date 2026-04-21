@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Transport System</title>
 
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 8px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #ff9800;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚌 Smart University Transport System</h1>
+
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('track')">Track Auto</button>
+<button onclick="showSection('routes')">Routes</button>
+<button onclick="showSection('timing')">Bus Timings</button>
+<button onclick="showSection('auto')">Electric Auto</button>
+<button onclick="showSection('guide')">Help Guide</button>
+
+<!-- HOME -->
+<div id="home" class="section" style="display:block;">
+    <h2>Welcome</h2>
+    <p>This system helps students with transport inside and outside campus.</p>
+
+    <h3>🚍 Long Route Buses</h3>
+    <p>University → Ludhiana</p>
+    <p>University → Chandigarh</p>
+    <p>University → Amritsar</p>
+    <p>University → Himachal Pradesh</p>
+    <p>University → Haryana</p>
+
+    <h3>⚡ Campus Electric Autos</h3>
+    <p>Available between blocks for easy movement.</p>
+</div>
+
+<!-- TRACK (ELECTRIC AUTO) -->
+<div id="track" class="section">
+    <h2>⚡ Live Electric Auto Tracking</h2>
+    <p id="location">Location: Block A1</p>
+    <p id="time">Next Arrival: 2 mins</p>
+</div>
+
+<!-- ROUTES -->
+<div id="routes" class="section">
+    <h2>Bus Routes</h2>
+    <p>Route 1 → University to Ludhiana</p>
+    <p>Route 2 → University to Chandigarh</p>
+    <p>Route 3 → University to Amritsar</p>
+    <p>Route 4 → University to Himachal Pradesh</p>
+    <p>Route 5 → University to Haryana</p>
+</div>
+
+<!-- BUS TIMINGS -->
+<div id="timing" class="section">
+    <h2>Long Route Bus Timings</h2>
+
+    <table>
+        <tr>
+            <th>Route</th>
+            <th>Morning</th>
+            <th>Evening</th>
+        </tr>
+        <tr>
+            <td>Ludhiana</td>
+            <td>7:30 AM</td>
+            <td>5:30 PM</td>
+        </tr>
+        <tr>
+            <td>Chandigarh</td>
+            <td>7:00 AM</td>
+            <td>6:00 PM</td>
+        </tr>
+        <tr>
+            <td>Amritsar</td>
+            <td>6:30 AM</td>
+            <td>6:30 PM</td>
+        </tr>
+        <tr>
+            <td>Himachal Pradesh</td>
+            <td>6:00 AM</td>
+            <td>7:00 PM</td>
+        </tr>
+        <tr>
+            <td>Haryana</td>
+            <td>7:45 AM</td>
+            <td>5:45 PM</td>
+        </tr>
+    </table>
+</div>
+
+<!-- ELECTRIC AUTO -->
+<div id="auto" class="section">
+    <h2>⚡ Campus Electric Auto</h2>
+
+    <p><b>Locations:</b> Block A1, A2, C1, C2, C3</p>
+
+    <table>
+        <tr>
+            <th>Time Slot</th>
+            <th>Service</th>
+        </tr>
+        <tr>
+            <td>Morning</td>
+            <td>8:00 AM – 12:00 PM</td>
+        </tr>
+        <tr>
+            <td>Afternoon</td>
+            <td>12:00 PM – 4:00 PM</td>
+        </tr>
+        <tr>
+            <td>Evening</td>
+            <td>4:00 PM – 7:00 PM</td>
+        </tr>
+    </table>
+</div>
+
+<!-- GUIDE -->
+<div id="guide" class="section">
+    <h2>Help & Support</h2>
+
+    <p><b>Transport Manager:</b> Rajesh Kumar</p>
+    <p><b>Coordinator:</b> Simran Kaur</p>
+    <p><b>Student Help:</b> Aman Sharma</p>
+
+    <h3>Guidelines</h3>
+    <p>✔ Check timings before leaving</p>
+    <p>✔ Use tracking feature</p>
+    <p>✔ Carry ID card</p>
+    <p>✔ Follow routes properly</p>
+</div>
+
+<script>
+function showSection(id) {
+    var sections = document.getElementsByClassName("section");
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    document.getElementById(id).style.display = "block";
+}
+
+// Electric auto tracking simulation
+var locations = ["Block A1", "Block A2", "Block C1", "Block C2", "Block C3"];
+var i = 0;
+
+setInterval(function() {
+    i = (i + 1) % locations.length;
+
+    document.getElementById("location").innerText = "Location: " + locations[i];
+
+    var time = Math.floor(Math.random() * 5) + 1;
+    document.getElementById("time").innerText = "Next Arrival: " + time + " mins";
+
+}, 3000);
+</script>
+
+</body>
+</html>
