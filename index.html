@@ -77,6 +77,7 @@
 <!-- TRACK -->
 <div id="track" class="section">
     <h2>⚡ Live Auto Tracking</h2>
+    <p id="autoNum">Auto Number: AUTO-101</p>
     <p id="location">Location: Block A1</p>
     <p id="time">Next Arrival: 2 mins</p>
 </div>
@@ -149,16 +150,23 @@ function showSection(id) {
     document.getElementById(id).style.display = "block";
 }
 
-// LIVE TRACKING
+// LIVE TRACKING WITH AUTO NUMBER
 var locations = ["C1","C2","C3","A1","A2","A3","D1","D2","D3","D4","D5","D6","D7","D8"];
+var autos = ["AUTO-101","AUTO-102","AUTO-103","AUTO-104","AUTO-105","AUTO-106","AUTO-107","AUTO-108","AUTO-109","AUTO-110"];
+
 var i = 0;
 
 setInterval(function() {
     i = (i + 1) % locations.length;
+
+    var autoIndex = Math.floor(Math.random() * autos.length);
+
+    document.getElementById("autoNum").innerText = "Auto Number: " + autos[autoIndex];
     document.getElementById("location").innerText = "Location: Block " + locations[i];
 
     var time = Math.floor(Math.random() * 5) + 1;
     document.getElementById("time").innerText = "Next Arrival: " + time + " mins";
+
 }, 3000);
 
 // AUTO STATUS UPDATE (every 5 minutes)
@@ -169,7 +177,7 @@ function updateStatus() {
     }
 }
 
-setInterval(updateStatus, 300000); // 5 minutes
+setInterval(updateStatus, 300000);
 </script>
 
 </body>
